@@ -1,6 +1,5 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { useState } from "react";
 
 function MyButton() {
   function handleClick() {
@@ -10,14 +9,14 @@ function MyButton() {
   return <button onClick={handleClick}>Click me</button>;
 }
 
-function MyApp() {
+let App = function MyApp() {
   return (
     <div>
       <h1>Welcome to my app</h1>
       <MyButton />
     </div>
   );
-}
+};
 
 const user = {
   name: "Hedy Lamarr",
@@ -64,34 +63,11 @@ function ShoppingList() {
   return <ul>{listItems}</ul>;
 }
 
-function CountButton() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return (
-    <button onClick={handleClick}>Click me! Number of clicks: {count}</button>
-  );
-}
-
-function CountApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <CountButton />
-      <CountButton />
-    </div>
-  );
-}
-
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <MyApp />
+    <App />
     <Profile />
     <ShoppingList />
-    <CountApp />
   </StrictMode>
 );
