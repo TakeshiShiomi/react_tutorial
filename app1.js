@@ -2,7 +2,11 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 function MyButton() {
-  return <button>I'm a button</button>;
+  function handleClick() {
+    alert("You clicked me!");
+  }
+
+  return <button onClick={handleClick}>Click me</button>;
 }
 
 let App = function MyApp() {
