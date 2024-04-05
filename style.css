@@ -45,3 +45,7 @@ code {
 ul {
   padding-inline-start: 20px;
 }
+
+.avatar {
+  border-radius: 50%;
+}
